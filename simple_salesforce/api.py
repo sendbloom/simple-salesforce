@@ -572,6 +572,7 @@ class SFType(object):
             'X-PrettyPrint': '1'
         }
         if self.headers:
+            self.headers.update(default_headers)
             result = self.request.request(method, url, headers=self.headers, **kwargs)
         else:
             result = self.request.request(method, url, headers=default_headers, **kwargs)
